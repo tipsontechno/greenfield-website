@@ -33,7 +33,7 @@ const MainHeader = () => {
 
           <h1>{useinfo}</h1>
           <p>{useparagraph}.</p>
-          <Link to='/plans' className='btn lg'>{language === "EN" ? " Get Started" : "Aan de slag"}</Link>
+          {/* <Link to='/plans' className='btn lg'>{language === "EN" ? " Get Started" : "Aan de slag"}</Link> */}
         </div>
         <div className="main__header-right">
           <div className="main__header-circle"></div>

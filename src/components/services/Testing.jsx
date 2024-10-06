@@ -63,12 +63,12 @@ const Testing = () => {
   return (
     <div className="mt-36">
       <div className="swservice">
-        <h3>{language === "NL" ? "Diensten testen" : "Testing Services"}</h3>
-        <p>
+        <h1>{language === "NL" ? "Diensten testen" : "Testing Services"}</h1>
+        <h3>
           {language === "NL"
             ? "Onze testdiensten omvatten:"
             : "Our Testing services include:"}
-        </p>
+        </h3>
       </div>
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
