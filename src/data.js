@@ -15,28 +15,28 @@ export const translations = {
                 icon: <SiOpenaigym />,
                 title: "Software Services",
                 info: "Offering full-time services to meet software needs through comprehensive development, testing, and analytics techniques. Greenfield is highly equipped to handle complex tasks, whether in-house or at client locations, with a team of skilled professionals. We provide proven end-to-end solutions and deliver continuous development support to ensure client requirements are met and maintained effectively.",
-                path: "/programs/111"
+                path: "/programs/Softwareservices"
             },
             {
                 id: 2,
                 icon: <SiOpenaigym />,
                 title: "WebSite Designing",
                 info: "Web development involves the creation of websites for the Internet (World Wide Web) or a private network (intranet). It can range from building simple static pages of plain text to more complex web-based applications, such as web apps, e-commerce platforms, and social networking services.",
-                path: "/programs/222"
+                path: "/programs/Designing"
             },
             {
                 id: 3,
                 icon: <SiOpenaigym />,
                 title: "Mobile Apps Developments",
                 info: "We provide comprehensive Application Development services, including object-oriented, web, client-server, and mobile applications, as well as legacy application modernization and extensions. Our expertise helps you address evolving technology challenges and supports the entire application development lifecycle—from defining requirements and documenting specifications to development, testing, and integrating software across various platforms.",
-                path: "/programs/333"
+                path: "/programs/Mobileapps"
             },
             {
                 id: 4,
                 icon: <SiOpenaigym />,
                 title: "QA and Testing Services",
                 info: "We assist organizations in minimizing risks and maintaining product integrity by offering a comprehensive suite of quality assurance and testing services.",
-                path: "/programs/444"
+                path: "/programs/QA"
             }
         ],
         values: [
@@ -190,28 +190,28 @@ export const translations = {
                 icon: <SiOpenaigym />,
                 title: "Softwarediensten",
                 info: "Het aanbieden van fulltime diensten om aan de softwarebehoeften te voldoen door middel van uitgebreide ontwikkelings-, test- en analysetechnieken. Greenfield is uitstekend uitgerust om complexe taken uit te voeren, zowel intern als op klantlocaties, met een team van bekwame professionals. Wij bieden bewezen end-to-end oplossingen en leveren continue ontwikkelingsondersteuning om ervoor te zorgen dat aan de eisen van de klant wordt voldaan en dat deze effectief worden onderhouden.",
-                path: "/programs/111"
+                path: "/programs/Softwareservices"
             },
             {
                 id: 2,
                 icon: <SiOpenaigym />,
                 title: "Website ontwerpen",
                 info: "Webontwikkeling omvat het maken van websites voor internet (World Wide Web) of een particulier netwerk (intranet). Het kan variëren van het bouwen van eenvoudige statische pagina's met platte tekst tot complexere webgebaseerde applicaties, zoals webapps, e-commerceplatforms en sociale netwerkdiensten.",
-                path: "/programs/222"
+                path: "/programs/Designing"
             },
             {
                 id: 3,
                 icon: <SiOpenaigym />,
                 title: "Ontwikkelingen in mobiele apps",
                 info: "We bieden uitgebreide diensten voor applicatieontwikkeling, waaronder objectgeoriënteerde, web-, client-server- en mobiele applicaties, evenals modernisering en uitbreidingen van oudere applicaties. Onze expertise helpt u bij het aanpakken van evoluerende technologische uitdagingen en ondersteunt de gehele levenscyclus van applicatieontwikkeling: van het definiëren van vereisten en het documenteren van specificaties tot het ontwikkelen, testen en integreren van software op verschillende platforms.",
-                path: "/programs/333"
+                path: "/programs/Mobileapps"
             },
             {
                 id: 4,
                 icon: <SiOpenaigym />,
                 title: "QA- en testdiensten",
                 info: "Wij helpen organisaties bij het minimaliseren van risico's en het handhaven van de productintegriteit door een uitgebreid pakket kwaliteitsborgings- en testdiensten aan te bieden.",
-                path: "/programs/444"
+                path: "/programs/QA"
             }
         ],
         values: [

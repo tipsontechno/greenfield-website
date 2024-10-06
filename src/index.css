@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::before,
 *::after {
@@ -259,3 +263,43 @@ footer {
     text-align: center;
     margin-top: 1rem;
 }
+
+.swservice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detailbox {
+    height: 200px;
+    width: 200px;
+    background-color: #007bff;
+    border-radius: 10px;
+}
+.worpress{
+    height: 120px;
+    width: 100px;
+}
+.appexample{
+    height: 23rem;
+    width: auto;
+}
+.androidex{
+    height: 500px;
+    width: 500px;
+}
+/* Add this CSS to your styles */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .dropdown-content.open {
+    max-height: 200px; /* Set to a height that fits your content */
+    opacity: 1;
+  }
+  
