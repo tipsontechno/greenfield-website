@@ -1,115 +1,348 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { useLanguage } from "../../LanguageContext"; // Assuming you have LanguageContext
+import {
+  Lightbulb,
+  Camera,
+  Gauge,
+  Home,
+  Music,
+  Settings,
+  Cpu,
+  Radio,
+  Cloud,
+} from "lucide-react";
+import { useLanguage } from "../../LanguageContext"; // Assuming you have a LanguageContext
 
-const Testing = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const { language } = useLanguage(); // Using the language context (NL or en)
+const ServicesAndProductsPage = () => {
+  const { language } = useLanguage(); // Get the current language (EN or NL)
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  // Translations for Embedded Services
+  const servicesTranslations = {
+    EN: [
+      {
+        name: "Embedded",
+        icon: <Cpu className="w-8 h-8" />,
+        services: ["Firmware Development", "Embedded Software Testing"],
+        image:
+          "https://sklc-tinymce-2021.s3.amazonaws.com/comp/2023/05/Things%20You%20Will%20Learn%20in%20an%20Offline%20Embedded%20Systems%202_1685096660.png",
+      },
+      {
+        name: "Hardware",
+        icon: <Radio className="w-8 h-8" />,
+        services: ["PCB Design and Prototyping", "Sensor Integration"],
+        image: "https://techterms.com/img/xl/hardware_627-2.jpg",
+      },
+      {
+        name: "IOT",
+        icon: <Cloud className="w-8 h-8" />,
+        services: [
+          "IoT Platform Development",
+          "Wireless Communication Protocols",
+        ],
+        image:
+          "https://www.simplilearn.com/ice9/free_resources_article_thumb/iot_devices.jpg",
+      },
+    ],
+    NL: [
+      {
+        name: "Ingebed",
+        icon: <Cpu className="w-8 h-8" />,
+        services: ["Firmwareontwikkeling", "Ingebedde Software Testing"],
+        image:
+          "https://sklc-tinymce-2021.s3.amazonaws.com/comp/2023/05/Things%20You%20Will%20Learn%20in%20an%20Offline%20Embedded%20Systems%202_1685096660.png",
+      },
+      {
+        name: "Hardware",
+        icon: <Radio className="w-8 h-8" />,
+        services: ["PCB-ontwerp en Prototyping", "Sensorintegratie"],
+        image: "https://techterms.com/img/xl/hardware_627-2.jpg",
+      },
+      {
+        name: "IOT",
+        icon: <Cloud className="w-8 h-8" />,
+        services: [
+          "IoT Platformontwikkeling",
+          "Draadloze Communicatieprotocollen",
+        ],
+        image:
+          "https://www.simplilearn.com/ice9/free_resources_article_thumb/iot_devices.jpg",
+      },
+    ],
+  };
 
-  const services = [
-    {
-      title: {
-        NL: "Belasting- en prestatietests",
-        en: "Load & Performance Testing",
+  // Translations for Products
+  const productsTranslations = {
+    EN: [
+      {
+        name: "SMART SWITCHES",
+        icon: <Home className="w-6 h-6" />,
+        features: [
+          "Touch Controlled via Remote, Voice & Mobile",
+          "Works without Internet",
+          "Mood Settings",
+          "Configurable Two-Way",
+          "Custom designed front plate",
+        ],
       },
-      description: {
-        NL: "Laadtijd en app-prestaties zijn cruciale elementen voor het succes van uw product. Wij testen deskundig de applicatieprestaties bij hoge belasting, meten, valideren en verifiëren operationele mogelijkheden om ervoor te zorgen dat u een vlekkeloze klantervaring kunt bieden.",
-        en: "Load time and app performance are crucial elements of your product's success. We expertly test application performance at high loads, measure, validate and verify operational capabilities to ensure you can offer a flawless customer experience.",
+      {
+        name: "SMART SECURITY",
+        icon: <Camera className="w-6 h-6" />,
+        features: [
+          "CCTV and IP Cameras",
+          "Door Sensor",
+          "Intrusion Sensor",
+          "Panic Button",
+          "Local and Mobile Alarm",
+          "Remote Arm & Disarm",
+        ],
       },
-      image:
-        "https://www.cem.org/hubfs/blog/Blog-Too-much-testing-in-schools.jpg",
-    },
-    {
-      title: {
-        NL: "Testautomatisering",
-        en: "Test Automation",
+      {
+        name: "SMART SENSORS",
+        icon: <Gauge className="w-6 h-6" />,
+        features: [
+          "Ambient",
+          "Gas Leak",
+          "Temperature",
+          "Humidity",
+          "Water Level",
+          "Motion/presence",
+        ],
       },
-      description: {
-        NL: "Handhaaf kwaliteit terwijl u de snelheid verhoogt en risico's minimaliseert met onze geavanceerde testautomatiseringsstrategieën.",
-        en: "Maintain quality while increasing speed and minimizing risk with our advanced test automation strategies.",
+      {
+        name: "LIGHTING CONTROL",
+        icon: <Lightbulb className="w-6 h-6" />,
+        features: [
+          "RGB Lighting Control",
+          "Dimming",
+          "Grouping",
+          "Tunable LED",
+          "Mood/Scene Control",
+          "Light fixtures",
+        ],
       },
-      image:
-        "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2019/05/website-usability-testing.webp",
-    },
-    {
-      title: {
-        NL: "Mobiele en webontwikkelingstests",
-        en: "Mobile and Web Dev Testing",
+      {
+        name: "HOME THEATRE",
+        icon: <Music className="w-6 h-6" />,
+        features: [
+          "Acoustic Design",
+          "Best of Breed Home Audio/Video Systems",
+          "Customized Lighting",
+        ],
       },
-      description: {
-        NL: "Voor het succes van uw bedrijf in het digitale tijdperk moeten uw web- en mobiele kanalen voorbeeldig zijn. Wij bieden geavanceerde ontwikkelingsondersteuning voor mobiel en web om ervoor te zorgen dat uw ontwikkelingsuitrol wendbaar, veilig en foutloos is.",
-        en: "For your business to succeed in the age of digital, your web and mobile channels need to be exemplary. We offer advanced development support for mobile and web to ensure that your dev rollouts are agile, secure and defect-free.",
+      {
+        name: "CUSTOM SOLUTIONS",
+        icon: <Settings className="w-6 h-6" />,
+        features: [
+          "Sliding Gate controls",
+          "Garage Door Controls",
+          "Integration with Gas, Water and Electricity meters",
+          "Building Automation Systems",
+          "Curtain Controls",
+        ],
       },
-      image:
-        "https://blog.talent500.co/wp-content/uploads/2023/09/gd-group-discussion-tips.jpg",
-    },
-    {
-      title: {
-        NL: "Cyberbeveiligingstests",
-        en: "Cyber Security Testing",
+    ],
+    NL: [
+      {
+        name: "SLIMME SCHAKELAARS",
+        icon: <Home className="w-6 h-6" />,
+        features: [
+          "Aanraakbediening via Afstandsbediening, Spraak & Mobiel",
+          "Werkt zonder internet",
+          "Sfeermodi",
+          "Configureerbare Tweeweg",
+          "Op maat ontworpen voorplaat",
+        ],
       },
-      description: {
-        NL: "Wij weten hoe voortdurend opkomende cyberdreigingen uw bedrijf beïnvloeden. Onze shift-left testbenadering introduceert beveiliging in elke fase van uw ontwikkelingstraject, identificeert vroeg kwetsbaarheden en voorkomt proactief aanvallen.",
-        en: "We know how continually emerging cyber threats impact your business. Our shift-left testing approach introduces security into every phase of your development journey, identifying vulnerabilities early on and proactively preventing attacks.",
+      {
+        name: "SLIMME VEILIGHEID",
+        icon: <Camera className="w-6 h-6" />,
+        features: [
+          "CCTV- en IP-camera's",
+          "Deursensor",
+          "Inbraaksensor",
+          "Noodknop",
+          "Lokale en Mobiele Alarm",
+          "Afstandsbediening In- en Uitschakelen",
+        ],
       },
-      image: "https://www.testmonitor.com/hubfs/TestMonitor%20Blog%2048.png",
-    },
-  ];
+      {
+        name: "SLIMME SENSOREN",
+        icon: <Gauge className="w-6 h-6" />,
+        features: [
+          "Omgeving",
+          "Gaslek",
+          "Temperatuur",
+          "Vochtigheid",
+          "Waterniveau",
+          "Beweging/aanwezigheid",
+        ],
+      },
+      {
+        name: "VERLICHTINGSBESTURING",
+        icon: <Lightbulb className="w-6 h-6" />,
+        features: [
+          "RGB-verlichting Besturing",
+          "Dimmen",
+          "Groeperen",
+          "Tunable LED",
+          "Sfeer/Scènecontrole",
+          "Verlichtingsarmaturen",
+        ],
+      },
+      {
+        name: "THUISBIOSCOOP",
+        icon: <Music className="w-6 h-6" />,
+        features: [
+          "Akoestisch Ontwerp",
+          "Topkwaliteit Audio-/Videosystemen",
+          "Aangepaste Verlichting",
+        ],
+      },
+      {
+        name: "AANGEPASTE OPLOSSINGEN",
+        icon: <Settings className="w-6 h-6" />,
+        features: [
+          "Schuifpoortbesturingen",
+          "Garagedeuren",
+          "Integratie met Gas-, Water- en Elektriciteitsmeters",
+          "Gebouwbeheersystemen",
+          "Gordijnbesturing",
+        ],
+      },
+    ],
+  };
+
+  // Get the services and products based on the selected language
+  const embeddedServices = servicesTranslations[language];
+  const products = productsTranslations[language];
 
   return (
-    <div className="mt-36">
-      <div className="swservice">
-        <h1>{language === "NL" ? "Diensten testen" : "Testing Services"}</h1>
-        <h3>
-          {language === "NL"
-            ? "Onze testdiensten omvatten:"
-            : "Our Testing services include:"}
-        </h3>
-      </div>
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service, index) => {
-            const title = service.title[language] || service.title.en; // Fallback to English
-            const description =
-              service.description[language] || service.description.en; // Fallback to English
+    <div className="w-full">
+      {/* Embedded, Hardware and IOT Section */}
+      <section className="py-16 mt-9">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-center mb-12"
+          >
+            {language === "EN"
+              ? "Embedded, Hardware and IOT"
+              : "Ingebed, Hardware en IoT"}
+          </motion.h2>
 
-            console.log("Title:", title); // Log title for debugging
-
-            return (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {embeddedServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: isVisible ? 1 : 0,
-                  y: isVisible ? 0 : 20,
-                }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative overflow-hidden rounded-lg shadow-lg h-64"
+                className="bg-[#128277]  rounded-lg shadow-lg overflow-hidden"
               >
-                <img
-                  src={service.image}
-                  alt={service.title[language]}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-end p-4">
-                  <h2 className="text-xl font-semibold text-white mb-2">
-                    {title}
-                  </h2>
-                  <p className="text-sm text-white leading-snug overflow-hidden line-clamp-3">
-                    {description}
-                  </p>
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl text-white font-semibold">
+                      {service.name}
+                    </h3>
+                    <div className="text-white">{service.icon}</div>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {service.services.map((item, serviceIndex) => (
+                      <li key={serviceIndex} className="flex items-start">
+                        <span className="text-slate-200 mr-2">✓</span>
+                        <span className="text-slate-200">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Products & Solutions Section */}
+      <section className="py-16 ">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-center mb-12"
+          >
+            {language === "EN"
+              ? "Products & Solutions"
+              : "Producten en oplossingen"}{" "}
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {products.map((product, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-[#128277] rounded-lg shadow-md overflow-hidden"
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4 bg-[#004D47] p-4 rounded-lg">
+                    <h3 className="text-lg text-white font-semibold">
+                      {product.name}
+                    </h3>
+                    <div className="text-slate-300">{product.icon}</div>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {product.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-start text-sm text-slate-200"
+                      >
+                        <span className="text-slate-200 mr-2 mt-1">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Center image and bottom text */}
+          <div className="text-center">
+            {/* <div className="mb-8 w-[300px] mx-auto">
+              <img
+                src="https://valmark.in/blog/wp-content/uploads/2024/02/shutterstock_2239959019-1024x659.jpg"
+                alt="Smart Home Control"
+                className="mx-auto rounded-lg shadow-md"
+              />
+            </div> */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="text-lg text-slate-200  font-medium"
+            >
+              {language === "EN"
+                ? " Enabled by RF Remote, Voice and Mobile App"
+                : "Mogelijk gemaakt door RF-afstandsbediening, spraak en mobiele app"}
+            </motion.p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default Testing;
+export default ServicesAndProductsPage;

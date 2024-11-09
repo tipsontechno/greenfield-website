@@ -1,4 +1,12 @@
 import { SiOpenaigym } from 'react-icons/si';
+import { FaHtml5 } from "react-icons/fa6";
+import { CiMobile3 } from "react-icons/ci";
+import { FaBrain } from "react-icons/fa";
+import { SiGooglecampaignmanager360 } from "react-icons/si";
+import { FaUsersRays } from "react-icons/fa6";
+import { MdDomain } from "react-icons/md";
+import { AiOutlineStock } from "react-icons/ai";
+import { ServerCog } from 'lucide-react';
 
 export const translations = {
     EN: {
@@ -12,55 +20,57 @@ export const translations = {
         services: [
             {
                 id: 1,
-                icon: <SiOpenaigym />,
+                icon: <ServerCog />,
                 title: "Software Services",
                 info: "Offering full-time services to meet software needs through comprehensive development, testing, and analytics techniques. Greenfield is highly equipped to handle complex tasks, whether in-house or at client locations, with a team of skilled professionals. We provide proven end-to-end solutions and deliver continuous development support to ensure client requirements are met and maintained effectively.",
-                path: "/programs/Softwareservices"
+                path: "/programs/Designing"
+
             },
             {
                 id: 2,
-                icon: <SiOpenaigym />,
-                title: "WebSite Designing",
+                icon: <FaHtml5 />,
+                title: "Web Designing",
                 info: "Web development involves the creation of websites for the Internet (World Wide Web) or a private network (intranet). It can range from building simple static pages of plain text to more complex web-based applications, such as web apps, e-commerce platforms, and social networking services.",
-                path: "/programs/Designing"
+                path: "/programs/Softwareservices"
+
             },
             {
                 id: 3,
-                icon: <SiOpenaigym />,
+                icon: <CiMobile3 />,
                 title: "Mobile Apps Developments",
                 info: "We provide comprehensive Application Development services, including object-oriented, web, client-server, and mobile applications, as well as legacy application modernization and extensions. Our expertise helps you address evolving technology challenges and supports the entire application development lifecycle—from defining requirements and documenting specifications to development, testing, and integrating software across various platforms.",
                 path: "/programs/Mobileapps"
             },
             {
                 id: 4,
-                icon: <SiOpenaigym />,
-                title: "QA and Testing Services",
-                info: "We assist organizations in minimizing risks and maintaining product integrity by offering a comprehensive suite of quality assurance and testing services.",
-                path: "/programs/QA"
+                icon: <FaBrain />,
+                title: "Embedded AI",
+                info: "The Embedded AI program focuses on the integration of artificial intelligence (AI) into embedded systems, enabling them to process data, learn from it, and make decisions autonomously",
+                path: "/programs/EmbeddedAI"
             }
         ],
         values: [
             {
                 id: 1,
-                icon: <SiOpenaigym />,
+                icon: <SiGooglecampaignmanager360 />,
                 title: "360 degree approach",
                 desc: "From ideation to delivery and continuous support, we manage the entire lifecycle of enterprise application design, integration, and management through our IS360 framework."
             },
             {
                 id: 2,
-                icon: <SiOpenaigym />,
+                icon: <FaUsersRays />,
                 title: "Client centric",
                 desc: "Greenfield's boutique format allows us to maintain a highly customized approach, build a long-term partnership, and remain focused on specific tasks at hand."
             },
             {
                 id: 3,
-                icon: <SiOpenaigym />,
+                icon: <MdDomain />,
                 title: "Domain expertise",
                 desc: "We possess exceptional domain expertise and in-depth knowledge of niche technologies: from solution architecture to firefighting projects."
             },
             {
                 id: 4,
-                icon: <SiOpenaigym />,
+                icon: <AiOutlineStock />,
                 title: "Time to Market",
                 desc: "High level expertise and a number of solutions accelerators enable fast product rollout, quick customizations, and smooth delivery. As a result, you get reduced development costs with speedier market entry."
             }
@@ -90,17 +100,17 @@ export const translations = {
         testimonials: [
             {
                 id: 1,
-                name: "Milange Systems",
+                name: "Melange Systems",
                 quote: "Working with greenfield electorics has been a game-changer for our business. Their deep understanding of our industry, combined with their technical expertise, allowed them to deliver a custom software solution that perfectly aligns with our needs. From the initial consultation to the final product, they were professional, responsive, and committed to our success. The results speak for themselves, and we couldn’t be happier with the partnership.",
                 job: "Director",
-                avatar: require("./images/avatar1.jpg")
+                avatar: require("./images/melange.png")
             },
             {
                 id: 2,
                 name: "SmartBuild Auto",
                 quote: "Greenfield's team exceeded our expectations at every stage of our project. Their 360-degree approach ensured that no detail was overlooked, and their commitment to quality was evident in every deliverable. They worked closely with us, adapting to our changing needs and providing innovative solutions that have transformed how we operate. Their team is highly skilled and a pleasure to work with. We highly recommend them for any business looking to take their technology to the next level.",
                 job: "Managing Director",
-                avatar: require("./images/avatar2.jpg")
+                avatar: require("./images/sblogo.png")
             },
 
         ],
@@ -187,55 +197,55 @@ export const translations = {
         services: [
             {
                 id: 1,
-                icon: <SiOpenaigym />,
+                icon: <ServerCog />,
                 title: "Softwarediensten",
                 info: "Het aanbieden van fulltime diensten om aan de softwarebehoeften te voldoen door middel van uitgebreide ontwikkelings-, test- en analysetechnieken. Greenfield is uitstekend uitgerust om complexe taken uit te voeren, zowel intern als op klantlocaties, met een team van bekwame professionals. Wij bieden bewezen end-to-end oplossingen en leveren continue ontwikkelingsondersteuning om ervoor te zorgen dat aan de eisen van de klant wordt voldaan en dat deze effectief worden onderhouden.",
                 path: "/programs/Softwareservices"
             },
             {
                 id: 2,
-                icon: <SiOpenaigym />,
+                icon: <FaHtml5 />,
                 title: "Website ontwerpen",
                 info: "Webontwikkeling omvat het maken van websites voor internet (World Wide Web) of een particulier netwerk (intranet). Het kan variëren van het bouwen van eenvoudige statische pagina's met platte tekst tot complexere webgebaseerde applicaties, zoals webapps, e-commerceplatforms en sociale netwerkdiensten.",
                 path: "/programs/Designing"
             },
             {
                 id: 3,
-                icon: <SiOpenaigym />,
+                icon: <CiMobile3 />,
                 title: "Ontwikkelingen in mobiele apps",
                 info: "We bieden uitgebreide diensten voor applicatieontwikkeling, waaronder objectgeoriënteerde, web-, client-server- en mobiele applicaties, evenals modernisering en uitbreidingen van oudere applicaties. Onze expertise helpt u bij het aanpakken van evoluerende technologische uitdagingen en ondersteunt de gehele levenscyclus van applicatieontwikkeling: van het definiëren van vereisten en het documenteren van specificaties tot het ontwikkelen, testen en integreren van software op verschillende platforms.",
                 path: "/programs/Mobileapps"
             },
             {
                 id: 4,
-                icon: <SiOpenaigym />,
-                title: "QA- en testdiensten",
-                info: "Wij helpen organisaties bij het minimaliseren van risico's en het handhaven van de productintegriteit door een uitgebreid pakket kwaliteitsborgings- en testdiensten aan te bieden.",
-                path: "/programs/QA"
+                icon: <FaBrain />,
+                title: "Ingebouwde AI",
+                info: "Het Embedded AI-programma richt zich op de integratie van kunstmatige intelligentie (AI) in embedded systemen, waardoor deze gegevens kunnen verwerken, ervan kunnen leren en autonoom beslissingen kunnen nemen.",
+                path: "/programs/EmbeddedAI"
             }
         ],
         values: [
             {
                 id: 1,
-                icon: <SiOpenaigym />,
+                icon: <SiGooglecampaignmanager360 />,
                 title: "Waarde Een",
                 desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
             },
             {
                 id: 2,
-                icon: <SiOpenaigym />,
+                icon: <FaUsersRays />,
                 title: "Waarde Twee",
                 desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
             },
             {
                 id: 3,
-                icon: <SiOpenaigym />,
+                icon: <MdDomain />,
                 title: "Waarde Drie",
                 desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
             },
             {
                 id: 4,
-                icon: <SiOpenaigym />,
+                icon: <AiOutlineStock />,
                 title: "Waarde Vier",
                 desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
             }
@@ -265,39 +275,20 @@ export const translations = {
         testimonials: [
             {
                 id: 1,
-                name: "Diana Ayi",
-                quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                job: "Student",
-                avatar: require("./images/avatar1.jpg")
+                name: "Melange Systems",
+                quote: "Werken met Greenfield Electronics is een echte doorbraak geweest voor ons bedrijf. Hun diepgaande kennis van onze industrie, gecombineerd met hun technische expertise, stelde hen in staat om een op maat gemaakte softwareoplossing te leveren die perfect aansluit bij onze behoeften. Van het eerste consult tot het eindproduct waren ze professioneel, responsief en toegewijd aan ons succes. De resultaten spreken voor zich, en we zijn ontzettend blij met deze samenwerking.",
+                job: "Directeur",
+                avatar: require("./images/melange.png")
             },
             {
                 id: 2,
-                name: "Daniel Vinyo",
-                quote: "Harum quaerat hic consequuntur molestias repellat ad quo tenetur vitae.",
-                job: "Software Engineer",
-                avatar: require("./images/avatar2.jpg")
-            },
-            {
-                id: 3,
-                name: "Edem Quist",
-                quote: "Atque vitae dignissimos iure pariatur quod numquam corrupti.",
-                job: "Universitair Docent",
-                avatar: require("./images/avatar3.jpg")
-            },
-            {
-                id: 4,
-                name: "Grace Lavoe",
-                quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                job: "Papegaai",
-                avatar: require("./images/avatar4.jpg")
-            },
-            {
-                id: 5,
-                name: "Nana Yaa Dankwa",
-                quote: "Atque vitae dignissimos iure pariatur quod numquam corrupti.",
-                job: "Apotheker",
-                avatar: require("./images/avatar5.jpg")
+                name: "SmartBuild Auto",
+                quote: "Het team van Greenfield overtrof onze verwachtingen in elke fase van ons project. Hun 360-gradenaanpak zorgde ervoor dat geen enkel detail over het hoofd werd gezien, en hun toewijding aan kwaliteit was merkbaar in elk onderdeel van het werk. Ze werkten nauw met ons samen, pasten zich aan onze veranderende behoeften aan en boden innovatieve oplossingen die onze werkwijze hebben getransformeerd. Hun team is zeer bekwaam en prettig om mee samen te werken. We raden hen ten zeerste aan voor elk bedrijf dat zijn technologie naar een hoger niveau wil tillen.",
+                job: "Algemeen Directeur",
+                avatar: require("./images/sblogo.png")
             }
+            
+           
         ],
         plans: [
             {

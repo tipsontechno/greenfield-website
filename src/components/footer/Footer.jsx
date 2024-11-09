@@ -1,104 +1,174 @@
-import { Link } from 'react-router-dom'
-import Logo from '../../images/logo_1.png'
-import { FaLinkedin } from 'react-icons/fa'
-import { FaFacebook } from 'react-icons/fa'
-import { AiOutlineTwitter } from 'react-icons/ai'
-import { AiFillInstagram } from 'react-icons/ai'
-
-
-
-import { useLanguage } from "../../LanguageContext.js"; // Adjust the path as needed
-import { useState } from 'react'; // Add useState for form handling
+import { Link } from "react-router-dom";
+import Logo from "../../images/logo_1.png";
+import { FaLinkedin, FaFacebook } from "react-icons/fa";
+import { AiOutlineTwitter, AiFillInstagram } from "react-icons/ai";
+import { useLanguage } from "../../LanguageContext.js";
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import Modal from "./Modal"; // Import the Modal component
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
 
-    const { language } = useLanguage(); // Use the language context
+  const [showModal, setShowModal] = useState(false); // Control modal visibility
+  const [modalMessage, setModalMessage] = useState("");
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
+  };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Add form submission logic (e.g., sending to an API)
-        console.log('Form Submitted:', formData);
-    };
+    emailjs
+      .sendForm(
+        "service_5zh9sz8",
+        "template_3ayxycs",
+        e.target,
+        "rcsOcsI7hz6KlcDOb"
+      )
+      .then(
+        (result) => {
+          console.log("Email successfully sent!", result.text);
+          setModalMessage(
+            language === "EN"
+              ? "Thank you for contacting us!"
+              : "Bedankt voor uw bericht!"
+          );
+          setShowModal(true); // Show the modal on success
+        },
+        (error) => {
+          console.log("Error sending email:", error.text);
+          setModalMessage(
+            language === "EN"
+              ? "Failed to send. Please try again."
+              : "Verzenden mislukt. Probeer het opnieuw."
+          );
+          setShowModal(true); // Show the modal on error
+        }
+      );
+  };
 
+  const closeModal = () => {
+    setShowModal(false); // Hide the modal when clicked
+  };
 
+  return (
+    <footer>
+      <div className="container footer__container">
+        <article>
+          <Link to="/" className="logo">
+            <img src={Logo} alt="Footer Logo" />
+          </Link>
+          <p className="text-white">
+            {language === "EN"
+              ? "We're here to answer any questions you may have. Feel free to reach out to us anytime, and we'll get back to you as soon as possible."
+              : "Wij zijn hier om al uw vragen te beantwoorden. U kunt altijd contact met ons opnemen en wij nemen zo snel mogelijk contact met u op."}
+          </p>
+          <div className="footer__socials">
+            <a
+              href="https://www.linkedin.com/company/greenfield-electronics-bv/"
+              target={"blank"}
+              rel="noreferrer noopener"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1B1GztWHkY/?mibextid=LQQJ4d"
+              target={"blank"}
+              rel="noreferrer noopener"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://twitter.com/GreenField70061"
+              target={"blank"}
+              rel="noreferrer noopener"
+            >
+              <AiOutlineTwitter />
+            </a>
+            <a
+              href="https://www.instagram.com/greenfield_electronics/profilecard/?igsh=MWd4c3ZkOHpoNHUxeg=="
+              target={"blank"}
+              rel="noreferrer noopener"
+            >
+              <AiFillInstagram />
+            </a>
+          </div>
+        </article>
 
-    return (
-        <footer>
-            <div className="container footer__container">
-                <article>
-                    <Link to="/" className="logo">
-                        <img src={Logo} alt="Footer Logo" />
-                    </Link>
-                    <p>
-                        {language === "EN" ? "We're here to answer any questions you may have. Feel free to reach out to us anytime, and we'll get back to you as soon as possible." : "Wij zijn hier om al uw vragen te beantwoorden. U kunt altijd contact met ons opnemen en wij nemen zo snel mogelijk contact met u op."}
-                    </p>
-                    <div className="footer__socials">
-                        <a href="https://linkedin.com" target={'blank'} rel="noreferrer noopener"><FaLinkedin /></a>
-                        <a href="https://facebook.com" target={'blank'} rel="noreferrer noopener"><FaFacebook /></a>
-                        <a href="https://twitter.com" target={'blank'} rel="noreferrer noopener"><AiOutlineTwitter /></a>
-                        <a href="https://instagram.com" target={'blank'} rel="noreferrer noopener"><AiFillInstagram /></a>
-                    </div>
-                </article>
-                 {/* New Article for Contact Form */}
-                 <article>
-                    <h4>{language === "EN" ? "Contact Us" : "Contacteer Ons"}</h4>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder={language === "EN" ? "Your Name" : "Uw Naam"}
-                                value={formData.name}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder={language === "EN" ? "Your Email" : "Uw E-mailadres"}
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <textarea
-                                name="message"
-                                placeholder={language === "EN" ? "Your Message" : "Uw Bericht"}
-                                value={formData.message}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </div>
-                        <button type="submit">
-                            {language === "EN" ? "Send Message" : "Bericht Verzenden"}
-                        </button>
-                    </form>
-                </article>
-                
-
+        {/* Contact Us form styled as a card */}
+        <article className="contact-card">
+          <h4 className="text-white">
+            {language === "EN" ? "Contact Us" : "Contacteer Ons"}
+          </h4>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-group">
+              <input
+                type="text"
+                name="user_name"
+                placeholder={language === "EN" ? "Your Name" : "Uw Naam"}
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="bg-[#128277] text-white	"
+              />
             </div>
-            <div className="footer__copyright">
-                <small>{language === "EN" ? "2024 copyright all rights reserved" : "2024 copyright alle rechten voorbehouden"}</small>
+            <div className="form-group">
+              <input
+                type="email"
+                name="user_email"
+                placeholder={
+                  language === "EN" ? "Your Email" : "Uw E-mailadres"
+                }
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="bg-[#128277] text-white	"
+              />
             </div>
-        </footer>
-    )
-}
+            <div className="form-group">
+              <textarea
+                name="message"
+                placeholder={language === "EN" ? "Your Message" : "Uw Bericht"}
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                className="bg-[#128277] text-white	"
+              />
+            </div>
+            <button type="submit" className="submit-btn">
+              {language === "EN" ? "Send Message" : "Bericht Verzenden"}
+            </button>
+          </form>
+        </article>
+      </div>
 
-export default Footer
+      <div className="footer__copyright">
+        <small>
+          {language === "EN"
+            ? "2024 copyright all rights reserved"
+            : "2024 copyright alle rechten voorbehouden"}
+        </small>
+      </div>
+
+      {/* Modal for showing success or failure message */}
+      <Modal
+        message={modalMessage}
+        showModal={showModal}
+        closeModal={closeModal}
+      />
+    </footer>
+  );
+};
+
+export default Footer;

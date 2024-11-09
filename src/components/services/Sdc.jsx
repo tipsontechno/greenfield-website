@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import {
   ChevronUp,
   ChevronDown,
-  Briefcase,
-  Layout,
-  FileText,
+  CalendarClock,
+  Figma,
+  BookA,
   Code,
   CheckSquare,
   Upload,
   Settings,
 } from "lucide-react";
+
 import { useLanguage } from "../../LanguageContext";
 import software from "../../images/sdcdaigram.png";
+import sdc from "../../images/sdc1.png";
+import TechnologyStack from "./TechnologyStack"; // Import the new TechnologyStack component
 
 const Sdc = () => {
   const { language } = useLanguage();
@@ -27,7 +30,7 @@ const Sdc = () => {
         language === "NL"
           ? "We verzamelen alle relevante informatie van de klant om op maat gemaakte softwareontwikkelingsoplossingen te ontwikkelen volgens hun verwachtingen."
           : "We collect all the relevant information from the customer to develop custom software development solutions as per their expectation.",
-      icon: Briefcase,
+      icon: CalendarClock,
     },
     {
       name: language === "NL" ? "Ontwerpen" : "Designing",
@@ -35,7 +38,7 @@ const Sdc = () => {
         language === "NL"
           ? "Het systeem en de documenten zijn opgesteld volgens de vereistenspecificaties. Dit helpt ons bij het definiëren van de algehele systeemarchitectuur en technologiestape"
           : "The system and documents are prepared as per the requirement specifications. This helps us define overall system architecture and technology stack.",
-      icon: Layout,
+      icon: Figma,
     },
     {
       name: language === "NL" ? "Definiëren" : "Defining",
@@ -43,7 +46,7 @@ const Sdc = () => {
         language === "NL"
           ? "Zodra de fase van de behoefteanalyse is voltooid, is de volgende stap het definiëren en documenteren van de softwarebehoeften."
           : "Once the requirement analysis phase is completed, the next step is to define and document software needs.",
-      icon: FileText,
+      icon: BookA,
     },
     {
       name: language === "NL" ? "Bouwen" : "Building",
@@ -99,7 +102,7 @@ const Sdc = () => {
       </div>
       <div className="min-h-screen">
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          <h1 className="text-3xl font-bold text-white mb-8">
             {language === "NL" ? "Diensten" : "Services"}
           </h1>
           <p className="text-xl text-gray-100 mb-12">
@@ -116,17 +119,17 @@ const Sdc = () => {
                   className="border rounded-lg overflow-hidden transition-all duration-300"
                 >
                   <button
-                    className="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-all duration-300"
+                    className="w-full flex justify-between items-center p-4 text-white hover:text-gray-900  bg-[#128277] hover:bg-gray-300  transition-all duration-300"
                     onClick={() => toggleDropdown(index)}
                   >
                     <span className="flex items-center space-x-2 font-medium">
-                      <service.icon size={18} className="text-gray-900" />
-                      <span className="text-blue-600">{service.name}</span>
+                      <service.icon size={18} />
+                      <span className=" ">{service.name}</span>
                     </span>
                     {openDropdown === index ? (
-                      <ChevronUp className="text-blue-600" size={20} />
+                      <ChevronUp size={20} />
                     ) : (
-                      <ChevronDown className="text-blue-600" size={20} />
+                      <ChevronDown size={20} />
                     )}
                   </button>
                   <div
@@ -143,9 +146,15 @@ const Sdc = () => {
                 </div>
               ))}
             </div>
-            <div className="hidden md:block">
-              <img src={software} alt="SDLC diagram" className="w-full" />
+            <div className="hidden md:block ">
+              <img src={sdc} alt="SDLC diagram" className="w-full " />
             </div>
+          </div>
+          <div className="mt-20">
+            <h3 className="font-bold text-3xl  text-center mb-10">
+              {language === "NL" ? "Technologie Stap" : "Technology Stack"}
+            </h3>
+            <TechnologyStack />
           </div>
         </main>
       </div>

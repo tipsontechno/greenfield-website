@@ -22,6 +22,7 @@
 
 .main__header-left h4 {
     margin-bottom: 1rem;
+    /* color: #ffeb3b; */
     color: var(--color-secondary);
     font-weight: 400;
 }
@@ -90,7 +91,6 @@
 /* Services */
 
 /* Programs */
-
 .services {
     margin-top: 4rem;
 }
@@ -113,6 +113,15 @@
     background: var(--color-secondary);
     color: var(--color-gray-600);
 }
+
+/* Add this media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .services__wrapper {
+        grid-template-columns: 1fr; /* Display items in a single column on mobile */
+        gap: 1.5rem; /* Reduce the gap between items */
+    }
+}
+
 
 /*
     Services
@@ -278,12 +287,6 @@ footer {
     gap: 6rem;
 }
 
-.footer__container article {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
-}
 
 .footer__container article p {
     margin-top: 0.5rem;
@@ -322,13 +325,10 @@ footer {
     color: var(--color-gray-100);
     text-align: center;
     padding: 1.5rem 0;
-    border-top: 2px solid var(--color-primary-variant);
+    /* border-top: 2px solid var(--color-primary-variant); */
     margin-top: 5rem;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-}
 
 form input, form textarea {
     width: 100%;
@@ -375,7 +375,7 @@ section {
 }
 
 .section__head span {
-    background: var(--color-gray-500);
+    background: var(--color-primary);
     padding: .8rem;
     border-radius: 1rem;
     color: var(--color-secondary);
@@ -384,7 +384,8 @@ section {
 
 
 .card {
-    background: var(--color-gray-500);
+    background: #1B4B5A;
+    /* background: var(--color-gray-500); */
     border: 2px solid transparent;
     text-align: center;
     padding: 3rem 2rem;

@@ -5,8 +5,9 @@ import Home from "./pages/home/Home";
 import NavBar from "./components/navbar/NavBar";
 import Softwareservice from "./components/services/Softwareservice";
 import Mobileapps from "./components/services/Mobileapps";
-import Sdc from "./components/services/Sdc.jsx";
 import Testing from "./components/services/Testing.jsx";
+import Sdc from "./components/services/Sdc.jsx";
+// import Sdc from "./components/services/Sdc.jsx";
 
 const App = () => {
   const HomeRef = useRef(null);
@@ -58,7 +59,7 @@ const App = () => {
         />
         <Route path="/programs/Mobileapps" element={<Mobileapps />} />
         <Route path="/programs/Designing" element={<Sdc />} />
-        <Route path="/programs/QA" element={<Testing />} />
+        <Route path="/programs/EmbeddedAI" element={<Testing />} />
       </Routes>
     </BrowserRouter>
   );
