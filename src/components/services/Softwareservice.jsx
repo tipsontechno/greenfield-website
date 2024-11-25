@@ -46,7 +46,7 @@ const Softwareservice = () => {
 
   return (
     <div className="swservice mt-36">
-      <h3 className="font-bold text-2xl text-center ">{text.title}</h3>
+      <h3 className="text-3xl font-bold">{text.title}</h3>
       <div className="mt-3 w-[80%] mx-auto text-center">{text.subtitle}</div>
 
       {/* Responsive grid for boxes */}

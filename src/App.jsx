@@ -58,8 +58,8 @@ const App = () => {
           element={<Softwareservice />}
         />
         <Route path="/programs/Mobileapps" element={<Mobileapps />} />
-        <Route path="/programs/Designing" element={<Sdc />} />
-        <Route path="/programs/EmbeddedAI" element={<Testing />} />
+        <Route path="/programs/SDC" element={<Sdc />} />
+        <Route path="/programs/EmbededSolutions" element={<Testing />} />
       </Routes>
     </BrowserRouter>
   );

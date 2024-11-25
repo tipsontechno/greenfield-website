@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Lightbulb,
@@ -120,15 +120,15 @@ const ServicesAndProductsPage = () => {
           "Light fixtures",
         ],
       },
-      {
-        name: "HOME THEATRE",
-        icon: <Music className="w-6 h-6" />,
-        features: [
-          "Acoustic Design",
-          "Best of Breed Home Audio/Video Systems",
-          "Customized Lighting",
-        ],
-      },
+      // {
+      //   name: "HOME THEATRE",
+      //   icon: <Music className="w-6 h-6" />,
+      //   features: [
+      //     "Acoustic Design",
+      //     "Best of Breed Home Audio/Video Systems",
+      //     "Customized Lighting",
+      //   ],
+      // },
       {
         name: "CUSTOM SOLUTIONS",
         icon: <Settings className="w-6 h-6" />,
@@ -189,15 +189,15 @@ const ServicesAndProductsPage = () => {
           "Verlichtingsarmaturen",
         ],
       },
-      {
-        name: "THUISBIOSCOOP",
-        icon: <Music className="w-6 h-6" />,
-        features: [
-          "Akoestisch Ontwerp",
-          "Topkwaliteit Audio-/Videosystemen",
-          "Aangepaste Verlichting",
-        ],
-      },
+      // {
+      //   name: "THUISBIOSCOOP",
+      //   icon: <Music className="w-6 h-6" />,
+      //   features: [
+      //     "Akoestisch Ontwerp",
+      //     "Topkwaliteit Audio-/Videosystemen",
+      //     "Aangepaste Verlichting",
+      //   ],
+      // },
       {
         name: "AANGEPASTE OPLOSSINGEN",
         icon: <Settings className="w-6 h-6" />,
@@ -215,7 +215,9 @@ const ServicesAndProductsPage = () => {
   // Get the services and products based on the selected language
   const embeddedServices = servicesTranslations[language];
   const products = productsTranslations[language];
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="w-full">
       {/* Embedded, Hardware and IOT Section */}
@@ -273,7 +275,7 @@ const ServicesAndProductsPage = () => {
       </section>
 
       {/* Products & Solutions Section */}
-      <section className="py-16 ">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -283,11 +285,12 @@ const ServicesAndProductsPage = () => {
           >
             {language === "EN"
               ? "Products & Solutions"
-              : "Producten en oplossingen"}{" "}
+              : "Producten en oplossingen"}
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {products.map((product, index) => (
+          {/* First row - 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {products.slice(0, 3).map((product, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -319,8 +322,42 @@ const ServicesAndProductsPage = () => {
             ))}
           </div>
 
+          {/* Second row - 2 cards centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {products.slice(3, 5).map((product, index) => (
+              <motion.div
+                key={index + 3}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
+                className="bg-[#128277] rounded-lg shadow-md overflow-hidden"
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4 bg-[#004D47] p-4 rounded-lg">
+                    <h3 className="text-lg text-white font-semibold">
+                      {product.name}
+                    </h3>
+                    <div className="text-slate-300">{product.icon}</div>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {product.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-start text-sm text-slate-200"
+                      >
+                        <span className="text-slate-200 mr-2 mt-1">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
           {/* Center image and bottom text */}
-          <div className="text-center">
+          <div className="text-center mt-6">
             {/* <div className="mb-8 w-[300px] mx-auto">
               <img
                 src="https://valmark.in/blog/wp-content/uploads/2024/02/shutterstock_2239959019-1024x659.jpg"

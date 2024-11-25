@@ -76,28 +76,28 @@ const Footer = () => {
           </p>
           <div className="footer__socials">
             <a
-              href="https://www.linkedin.com/company/greenfield-electronics-bv/"
+              href="https://linkedin.com"
               target={"blank"}
               rel="noreferrer noopener"
             >
               <FaLinkedin />
             </a>
             <a
-              href="https://www.facebook.com/share/1B1GztWHkY/?mibextid=LQQJ4d"
+              href="https://facebook.com"
               target={"blank"}
               rel="noreferrer noopener"
             >
               <FaFacebook />
             </a>
             <a
-              href="https://twitter.com/GreenField70061"
+              href="https://twitter.com"
               target={"blank"}
               rel="noreferrer noopener"
             >
               <AiOutlineTwitter />
             </a>
             <a
-              href="https://www.instagram.com/greenfield_electronics/profilecard/?igsh=MWd4c3ZkOHpoNHUxeg=="
+              href="https://instagram.com"
               target={"blank"}
               rel="noreferrer noopener"
             >

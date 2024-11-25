@@ -67,7 +67,7 @@ const Mobileapps = () => {
 
   return (
     <div className="swservice mt-36">
-      <h3 className="font-bold text-2xl text-center ">{text.title}</h3>
+      <h3 className="text-3xl font-bold text-center ">{text.title}</h3>
       <div className="mt-3 w-[80%] mx-auto text-center">{text.subtitle}</div>
       <div className="flex flex-col md:flex-row gap-10 mt-6 w-full items-center justify-center ">
         <div className="flex flex-col gap-6 w-[80%] md:w-[40%] align-center justify-center items-center">

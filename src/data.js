@@ -23,7 +23,7 @@ export const translations = {
                 icon: <ServerCog />,
                 title: "Software Services",
                 info: "Offering full-time services to meet software needs through comprehensive development, testing, and analytics techniques. Greenfield is highly equipped to handle complex tasks, whether in-house or at client locations, with a team of skilled professionals. We provide proven end-to-end solutions and deliver continuous development support to ensure client requirements are met and maintained effectively.",
-                path: "/programs/Designing"
+                path: "/programs/SDC"
 
             },
             {
@@ -44,9 +44,9 @@ export const translations = {
             {
                 id: 4,
                 icon: <FaBrain />,
-                title: "Embedded AI",
-                info: "The Embedded AI program focuses on the integration of artificial intelligence (AI) into embedded systems, enabling them to process data, learn from it, and make decisions autonomously",
-                path: "/programs/EmbeddedAI"
+                title: "IOT Solutions & Embedded Services",
+                info: "IoT Solutions & Embedded Services focus on integrating smart devices with embedded systems, enabling seamless connectivity, data processing, and autonomous decision-making for optimized performance and automation.",
+                path: "/programs/EmbededSolutions"
             }
         ],
         values: [
@@ -101,7 +101,7 @@ export const translations = {
             {
                 id: 1,
                 name: "Melange Systems",
-                quote: "Working with greenfield electorics has been a game-changer for our business. Their deep understanding of our industry, combined with their technical expertise, allowed them to deliver a custom software solution that perfectly aligns with our needs. From the initial consultation to the final product, they were professional, responsive, and committed to our success. The results speak for themselves, and we couldn’t be happier with the partnership.",
+                quote: "Working with greenfield electoric has been a game-changer for our business. Their deep understanding of our industry, combined with their technical expertise, allowed them to deliver a custom software solution that perfectly aligns with our needs. From the initial consultation to the final product, they were professional, responsive, and committed to our success. The results speak for themselves, and we couldn’t be happier with the partnership.",
                 job: "Director",
                 avatar: require("./images/melange.png")
             },
@@ -200,14 +200,15 @@ export const translations = {
                 icon: <ServerCog />,
                 title: "Softwarediensten",
                 info: "Het aanbieden van fulltime diensten om aan de softwarebehoeften te voldoen door middel van uitgebreide ontwikkelings-, test- en analysetechnieken. Greenfield is uitstekend uitgerust om complexe taken uit te voeren, zowel intern als op klantlocaties, met een team van bekwame professionals. Wij bieden bewezen end-to-end oplossingen en leveren continue ontwikkelingsondersteuning om ervoor te zorgen dat aan de eisen van de klant wordt voldaan en dat deze effectief worden onderhouden.",
-                path: "/programs/Softwareservices"
+                path: "/programs/SDC"
             },
             {
                 id: 2,
                 icon: <FaHtml5 />,
                 title: "Website ontwerpen",
                 info: "Webontwikkeling omvat het maken van websites voor internet (World Wide Web) of een particulier netwerk (intranet). Het kan variëren van het bouwen van eenvoudige statische pagina's met platte tekst tot complexere webgebaseerde applicaties, zoals webapps, e-commerceplatforms en sociale netwerkdiensten.",
-                path: "/programs/Designing"
+                path: "/programs/Softwareservices"
+
             },
             {
                 id: 3,
@@ -219,9 +220,9 @@ export const translations = {
             {
                 id: 4,
                 icon: <FaBrain />,
-                title: "Ingebouwde AI",
-                info: "Het Embedded AI-programma richt zich op de integratie van kunstmatige intelligentie (AI) in embedded systemen, waardoor deze gegevens kunnen verwerken, ervan kunnen leren en autonoom beslissingen kunnen nemen.",
-                path: "/programs/EmbeddedAI"
+                title: "IoT-oplossingen en ingebedde services",
+                info: "IoT Solutions & Embedded Services richten zich op het integreren van slimme apparaten met ingebedde systemen, waardoor naadloze connectiviteit, gegevensverwerking en autonome besluitvorming mogelijk worden voor geoptimaliseerde prestaties en automatisering.",
+                path: "/programs/EmbededSolutions"
             }
         ],
         values: [
@@ -276,7 +277,7 @@ export const translations = {
             {
                 id: 1,
                 name: "Melange Systems",
-                quote: "Werken met Greenfield Electronics is een echte doorbraak geweest voor ons bedrijf. Hun diepgaande kennis van onze industrie, gecombineerd met hun technische expertise, stelde hen in staat om een op maat gemaakte softwareoplossing te leveren die perfect aansluit bij onze behoeften. Van het eerste consult tot het eindproduct waren ze professioneel, responsief en toegewijd aan ons succes. De resultaten spreken voor zich, en we zijn ontzettend blij met deze samenwerking.",
+                quote: "Werken met Greenfield Electronic is een echte doorbraak geweest voor ons bedrijf. Hun diepgaande kennis van onze industrie, gecombineerd met hun technische expertise, stelde hen in staat om een op maat gemaakte softwareoplossing te leveren die perfect aansluit bij onze behoeften. Van het eerste consult tot het eindproduct waren ze professioneel, responsief en toegewijd aan ons succes. De resultaten spreken voor zich, en we zijn ontzettend blij met deze samenwerking.",
                 job: "Directeur",
                 avatar: require("./images/melange.png")
             },

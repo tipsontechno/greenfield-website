@@ -51,15 +51,15 @@ const ProductsShowcase = () => {
         "Light fixtures",
       ],
     },
-    {
-      name: "HOME THEATRE",
-      icon: <Music className="w-6 h-6" />,
-      features: [
-        "Acoustic Design",
-        "Best of Breed Home Audio/Video Systems",
-        "Customized Lighting",
-      ],
-    },
+    // {
+    //   name: "HOME THEATRE",
+    //   icon: <Music className="w-6 h-6" />,
+    //   features: [
+    //     "Acoustic Design",
+    //     "Best of Breed Home Audio/Video Systems",
+    //     "Customized Lighting",
+    //   ],
+    // },
     {
       name: "CUSTOM SOLUTIONS",
       icon: <Settings className="w-6 h-6" />,

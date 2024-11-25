@@ -89,7 +89,7 @@ const Sdc = () => {
   return (
     <div className="mt-36">
       <div className="swservice">
-        <h1>
+        <h1 className="text-3xl font-bold">
           {language === "NL"
             ? "LEVENSCYCLUS VAN SOFTWAREONTWIKKELING"
             : "SOFTWARE DEVELOPMENT LIFECYCLE"}
